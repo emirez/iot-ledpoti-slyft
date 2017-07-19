@@ -1,0 +1,77 @@
+\hypertarget{structledpoti__s}{}\section{ledpoti\+\_\+s Struct Reference}
+\label{structledpoti__s}\index{ledpoti\+\_\+s@{ledpoti\+\_\+s}}
+
+
+Interface structure for Led Poti Example.  
+
+
+
+
+{\ttfamily \#include $<$ledpoti.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{structledpoti__s_a68de5489c63aee62e5da18f9b4fe6fa9}{poti}
+\item 
+bool \hyperlink{structledpoti__s_a323939ea414113ee4c4ab2459c593886}{led}
+\item 
+int \hyperlink{structledpoti__s_a877ef064792684db1fe8ca3b9af45897}{lower\+\_\+bound}
+\item 
+int \hyperlink{structledpoti__s_a13828b9c632c6ad2497be31aeeaa991b}{upper\+\_\+bound}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface structure for Led Poti Example. 
+
+This is a Contionuous Integration orientation program that is written for demonstrating Agile Software Development Techniques in IoT.
+
+Designed especially for working with Node\+M\+C\+Uv2 with L\+ED and Rotary Switch
+
+The L\+ED works as an digital actuator according to data coming from analog rotary angle sensor. The analog input value from potentiometer makes L\+ED on/off by looking its operating range.
+
+Digital and analog ports are used for L\+ED and potentiometer. D5 -\/$>$ L\+ED A0 -\/$>$ R\+O\+Tary Potentiometer
+
+In sake of achieving Co\+A\+P-\/enabled control, the Slyft A\+PI is used for wrapping. Further reading\+: www.\+slyft.\+io
+
+We are Thing\+Forward and we make programming for \char`\"{}things\char`\"{} in the rapidly evolving world of IoT simpler, faster, better and easier to maintain. Our comprehensive developer tools and support services ensure that your embedded devices get to market fast -\/ making sure your company can profit from the full potential of IoT. Further reading\+: www.\+Thing\+Forward.\+io
+
+Copyright (C) 2017 thingforward.\+io
+
+This program is free software\+: you can redistribute it and/or modify it under the terms of the G\+NU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but W\+I\+T\+H\+O\+UT A\+NY W\+A\+R\+R\+A\+N\+TY; without even the implied warranty of M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY or F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE. See the G\+NU General Public License for more details.
+
+You should have received a copy of the G\+NU General Public License along with this program. If not, see \href{http://www.gnu.org/licenses/}{\tt http\+://www.\+gnu.\+org/licenses/}. This stores the internal state and the bounds for turning the led on or off. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structledpoti__s_a323939ea414113ee4c4ab2459c593886}\label{structledpoti__s_a323939ea414113ee4c4ab2459c593886}} 
+\index{ledpoti\+\_\+s@{ledpoti\+\_\+s}!led@{led}}
+\index{led@{led}!ledpoti\+\_\+s@{ledpoti\+\_\+s}}
+\subsubsection{\texorpdfstring{led}{led}}
+{\footnotesize\ttfamily bool ledpoti\+\_\+s\+::led}
+
+Last L\+ED state (true=on) \mbox{\Hypertarget{structledpoti__s_a877ef064792684db1fe8ca3b9af45897}\label{structledpoti__s_a877ef064792684db1fe8ca3b9af45897}} 
+\index{ledpoti\+\_\+s@{ledpoti\+\_\+s}!lower\+\_\+bound@{lower\+\_\+bound}}
+\index{lower\+\_\+bound@{lower\+\_\+bound}!ledpoti\+\_\+s@{ledpoti\+\_\+s}}
+\subsubsection{\texorpdfstring{lower\+\_\+bound}{lower\_bound}}
+{\footnotesize\ttfamily int ledpoti\+\_\+s\+::lower\+\_\+bound}
+
+L\+ED goes on if poti in \mbox{[}lower\+\_\+bound..upper\+\_\+bound\mbox{]} \mbox{\Hypertarget{structledpoti__s_a68de5489c63aee62e5da18f9b4fe6fa9}\label{structledpoti__s_a68de5489c63aee62e5da18f9b4fe6fa9}} 
+\index{ledpoti\+\_\+s@{ledpoti\+\_\+s}!poti@{poti}}
+\index{poti@{poti}!ledpoti\+\_\+s@{ledpoti\+\_\+s}}
+\subsubsection{\texorpdfstring{poti}{poti}}
+{\footnotesize\ttfamily int ledpoti\+\_\+s\+::poti}
+
+Last potentiometer value \mbox{\Hypertarget{structledpoti__s_a13828b9c632c6ad2497be31aeeaa991b}\label{structledpoti__s_a13828b9c632c6ad2497be31aeeaa991b}} 
+\index{ledpoti\+\_\+s@{ledpoti\+\_\+s}!upper\+\_\+bound@{upper\+\_\+bound}}
+\index{upper\+\_\+bound@{upper\+\_\+bound}!ledpoti\+\_\+s@{ledpoti\+\_\+s}}
+\subsubsection{\texorpdfstring{upper\+\_\+bound}{upper\_bound}}
+{\footnotesize\ttfamily int ledpoti\+\_\+s\+::upper\+\_\+bound}
+
+L\+ED goes of if poti out \mbox{[}lower\+\_\+bound..upper\+\_\+bound\mbox{]} 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/ledpoti.\+h\end{DoxyCompactItemize}
