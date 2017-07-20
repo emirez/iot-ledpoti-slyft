@@ -42,27 +42,41 @@
 #include <Arduino.h>
 #include "ledpoti.h"
 #include "ledapp.h"
+#include "tfwifi.h"
+
+#include "led.h"
+#include "poti.h"
+#include "bounds.h"
+
+#include "microcoap/coap.h"
+#include "udp_microcoap_wrapper.h"
 
 ledpoti_s obj; /**< New struct member */
-
+WiFiUDP Udp;
 /** \brief Setup function for initializations */
 void setup() {
   Serial.begin(9600); /**< Serial port data rate is 9600 bits/sec */
   /** \brief Native environment application */
+  setup_wifi();
+  Udp.begin(5683);
+  coap_setup();
+  udp_microcoap_wrapper_init(&Udp);
   ledpoti_init(&obj);
   ledpoti_set_bounds(&obj, 250, 750);
   /** \brief Embedded environment application */
   ledapp_ports_init();
 }
+
 /** \brief Processor-in-a-loop function for actions */
 void loop() {
-  /** \brief Embedded environment actions */
-  ledapp_apploop(&obj);
-  Serial.print("Poti Value: ");
-  Serial.println(ledapp_get_poti_value());
-  Serial.print("LED Value: ");
-  Serial.println(ledapp_get_led_value());
-  delay(1000);
+  /** \brief Embedded environment and CoAP actions */
+    udp_microcoap_wrapper *c = udp_microcoap_wrapper_get();
+    /** \brief Embedded environment actions */
+    ledapp_apploop(&obj);
+    Serial.print("LED Value: ");
+    Serial.println(ledapp_get_led_value());
+    /** \brief let it handle a message (if one is available via WifiUdp) */
+    c->b_debug = true;
+    c->ops->handle_udp_coap_message(c);
 }
-
 #endif

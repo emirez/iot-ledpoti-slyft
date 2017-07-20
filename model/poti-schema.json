@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "poti",
+    "title": "Poti Value",
+    "description": "Poti Value",
+    "type": "object",
+    "properties" : {
+    "potval" : {
+          "type": "integer",
+          "description": "0-1023"
+        }
+    },
+    "additionalProperties": false,
+    "required": ["potval"],
+    "minProperties": 1
+}

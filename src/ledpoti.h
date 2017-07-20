@@ -87,4 +87,8 @@ ledpoti_status_s ledpoti_set_poti_value(ledpoti_s *obj, int new_poti_value);
 /** \brief calculcates the led state */
 bool ledpoti_evaluate_led_state(ledpoti_s *obj);
 
+int ledpoti_get_lower_bound(ledpoti_s *obj);
+
+int ledpoti_get_upper_bound(ledpoti_s *obj);
+
 #endif

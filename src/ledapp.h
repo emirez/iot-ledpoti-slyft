@@ -58,6 +58,6 @@ void ledapp_apploop(ledpoti_s *obj);
 int ledapp_get_poti_value();
 
 /** \brief Returns the LED state */
-bool ledapp_get_led_value();
+int ledapp_get_led_value();
 
 #endif

@@ -95,3 +95,11 @@ bool ledpoti_evaluate_led_state(ledpoti_s *obj) {
 	obj->led = ((v >= obj->lower_bound) && (v <= obj->upper_bound));
 	return obj->led;
 }
+
+int ledpoti_get_lower_bound(ledpoti_s *obj){
+	return obj->lower_bound;
+}
+
+int ledpoti_get_upper_bound(ledpoti_s *obj){
+	return obj->upper_bound;
+}

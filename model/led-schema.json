@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "led",
+    "title": "LED State",
+    "description": "LED State",
+    "type": "object",
+    "properties" : {
+    "ledstate" : {
+          "type": "integer",
+          "description": "true->1, false->0"
+        }
+    },
+    "additionalProperties": false,
+    "required": ["ledstate"],
+    "minProperties": 1
+}

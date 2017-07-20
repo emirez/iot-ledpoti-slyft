@@ -1,0 +1,44 @@
+#%RAML 0.8
+title: coapled
+baseUri: coap://api.sylft.io/
+version: 0.1
+schemas:
+  - bounds: bounds-schema.json
+  - led: led-schema.json
+  - poti: poti-schema.json  
+/bounds:
+  get:
+    description: Return device configuration
+    responses:
+      205:
+        body:
+          application/x-msgpack:
+            schema: bounds
+  post:
+    description: Update device configuration
+    body:
+      application/x-msgpack:
+        schema: bounds
+    responses:
+      204:
+        description: Changed device configuration
+      406:
+        description: Configuration request not acceptable
+
+/led:
+  get:
+    description: Return device configuration
+    responses:
+      205:
+        body:
+          application/x-msgpack:
+            schema: led
+
+/poti:
+  get:
+    description: Return device configuration
+    responses:
+      205:
+        body:
+          application/x-msgpack:
+            schema: poti

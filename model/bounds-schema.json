@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "bounds",
+    "title": "Boundary Values",
+    "description": "Specify boundary values",
+    "type": "object",
+    "properties" : {
+    "lowerbound" : {
+          "type": "integer",
+          "description": "lower bound value"
+        },
+    "upperbound" : {
+          "type": "integer",
+          "description": "upper bound value"
+        }
+    },
+    "additionalProperties": false,
+    "required": ["lowerbound", "upperbound"],
+    "minProperties": 2
+}

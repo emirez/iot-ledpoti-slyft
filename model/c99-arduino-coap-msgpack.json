@@ -1,0 +1,5 @@
+{
+  "c_define_prefix": "tutci",
+  "c_identifier_prefix": "TUTCI",
+  "source_file_extension": "cpp"
+}
