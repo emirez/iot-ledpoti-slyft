@@ -48,11 +48,17 @@
  * for turning the led on or off on NodeMCUv2 Board.
  */
 
+/** \brief initialized data structures */
+void ledapp_init();
+
 /** \brief Pinmode assignments as initializations */
 void ledapp_ports_init();
 
+/** \brief returns the current data struct */
+ledpoti_s *ledapp_get_data();
+
 /** \brief Turns on/off the LED according to Poti value */
-void ledapp_apploop(ledpoti_s *obj);
+void ledapp_apploop();
 
 /** \brief Returns the Poti value */
 int ledapp_get_poti_value();
