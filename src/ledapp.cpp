@@ -46,6 +46,18 @@
 #define LED_PORT D5 /**< Digital Port 5 */
 #define ROT_PORT A0 /**< Analog Port 0 */
 
+/** \brief store settings here */
+ledpoti_s ledapp_c_obj;
+
+void ledapp_init() {
+  ledpoti_init(&ledapp_c_obj);
+}
+
+ledpoti_s *ledapp_get_data() {
+  return &ledapp_c_obj;
+}
+
+
 /** \brief Initializes the ports. */
 void ledapp_ports_init(){
   pinMode(LED_PORT, OUTPUT);
@@ -53,9 +65,10 @@ void ledapp_ports_init(){
 }
 
 /** \brief Makes microcontroller run, blinks LED, reads Poti */
-void ledapp_apploop(ledpoti_s *obj){
-    ledpoti_set_poti_value(obj, analogRead(ROT_PORT));
-    digitalWrite(LED_PORT, ledpoti_evaluate_led_state(obj));
+void ledapp_apploop() {
+  ledpoti_s *obj = ledapp_get_data();
+  ledpoti_set_poti_value(obj, analogRead(ROT_PORT));
+  digitalWrite(LED_PORT, ledpoti_evaluate_led_state(obj));
 }
 
 /** \brief Returns the poti value. */

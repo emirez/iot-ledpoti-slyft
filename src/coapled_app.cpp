@@ -18,7 +18,6 @@
 #include "ledpoti.h"
 
 
-ledpoti_s c_obj;
 //
 // CoAP Application level handlers
 //
@@ -28,14 +27,15 @@ bool TUTCI__coapled__get___bounds(
     struct TUTCI__coapled__get___bounds_req *req,
     struct TUTCI__coapled__get___bounds_resp *resp) {
 
-    resp->data.bounds_205.lowerbound = ledpoti_get_lower_bound(&c_obj);
-    resp->data.bounds_205.upperbound = ledpoti_get_upper_bound(&c_obj);
+    ledpoti_s *c_obj = ledapp_get_data();
+    resp->data.bounds_205.lowerbound = ledpoti_get_lower_bound(c_obj);
+    resp->data.bounds_205.upperbound = ledpoti_get_upper_bound(c_obj);
     resp->response_code = COAP_RSPCODE_CONTENT;
 
     Serial.print("TUTCI__coapled__get___lower_bound = ");
-    Serial.println(ledpoti_get_lower_bound(&c_obj));
+    Serial.println(ledpoti_get_lower_bound(c_obj));
     Serial.print("TUTCI__coapled__get___upper_bound = ");
-    Serial.println(ledpoti_get_upper_bound(&c_obj));
+    Serial.println(ledpoti_get_upper_bound(c_obj));
 
     return true;
 }
@@ -46,7 +46,8 @@ bool TUTCI__coapled__post___bounds(
     struct TUTCI__coapled__post___bounds_req *req,
     struct TUTCI__coapled__post___bounds_resp *resp) {
 
-    ledpoti_set_bounds(&c_obj, req->data.bounds.lowerbound, req->data.bounds.upperbound);
+    ledpoti_s *c_obj = ledapp_get_data();
+    ledpoti_set_bounds(c_obj, req->data.bounds.lowerbound, req->data.bounds.upperbound);
     resp->response_code = COAP_RSPCODE_CHANGED;
 
     return true;
